@@ -46,11 +46,10 @@ namespace SupermarketReceipt
                     var offer = offers[p];
                     var unitPrice = catalog.GetUnitPrice(p);
                     Discount discount = null;
-                    var x = 1;
                     
                     if (offer.OfferType == SpecialOfferType.ThreeForTwo)
                     {
-                        x = 3;
+                        ThreeForTwoOffer(ref discount, p, quantityAsInt, unitPrice);
                     }
 
                     if(offer.OfferType == SpecialOfferType.TwoForAmount || offer.OfferType == SpecialOfferType.FiveForAmount)
@@ -64,17 +63,10 @@ namespace SupermarketReceipt
                             NForAmountOffer(ref discount, offer, p, 5, quantityAsInt, unitPrice);
                         }
                     }
-
-                    
-                    if (offer.OfferType == SpecialOfferType.FiveForAmount) x = 5;
-                    var numberOfXs = quantityAsInt / x;
-                    if (offer.OfferType == SpecialOfferType.ThreeForTwo && quantityAsInt > 2)
+                    if (offer.OfferType == SpecialOfferType.TenPercentDiscount)
                     {
-                        var discountAmount = quantity * unitPrice - (numberOfXs * 2 * unitPrice + quantityAsInt % 3 * unitPrice);
-                        discount = new Discount(p, "3 for 2", -discountAmount);
+                        TenPercentDiscountOffer(ref discount, offer, p, quantity, unitPrice);
                     }
-
-                    if (offer.OfferType == SpecialOfferType.TenPercentDiscount) discount = new Discount(p, offer.Argument + "% off", -quantity * unitPrice * offer.Argument / 100.0);
                     
                     if (discount != null)
                         receipt.AddDiscount(discount);
@@ -82,9 +74,13 @@ namespace SupermarketReceipt
             }
         }
 
-        private void ThreeForTwoOffer()
+        private void ThreeForTwoOffer(ref Discount discount, Product product, int productQuantity, double productUnitPrice)
         {
-            throw new System.NotImplementedException();
+            if(productQuantity > 2)
+            {
+                var discountAmount = productQuantity * productUnitPrice - (productQuantity / 3 * 2 * productUnitPrice + productQuantity % 3 * productUnitPrice);
+                discount = new Discount(product, "3 for 2", -discountAmount);
+            }
         }
 
         private void NForAmountOffer(ref Discount discount, Offer offer, Product product, int n, int productQuantity, double productUnitPrice)
@@ -98,9 +94,9 @@ namespace SupermarketReceipt
             }
         }
 
-        private void TenPercentDiscountOffer()
+        private void TenPercentDiscountOffer(ref Discount discount, Offer offer, Product product, double productQuantity, double productUnitPrice)
         {
-            throw new System.NotImplementedException();
+            discount = new Discount(product, offer.Argument + "% off", -productQuantity * productUnitPrice * offer.Argument / 100.0);
         }
         
         private string PrintPrice(double price)
