@@ -1,0 +1,695 @@
+{
+  "SupermarketReceipt.dll": {
+    "/Users/bastienchies/Downloads/SupermarketReceipt-Refactoring-Kata-main/csharp/SupermarketReceipt/Discount.cs": {
+      "SupermarketReceipt.Discount": {
+        "System.String SupermarketReceipt.Discount::get_Description()": {
+          "Lines": {
+            "12": 6
+          },
+          "Branches": []
+        },
+        "System.Double SupermarketReceipt.Discount::get_DiscountAmount()": {
+          "Lines": {
+            "13": 9
+          },
+          "Branches": []
+        },
+        "SupermarketReceipt.Product SupermarketReceipt.Discount::get_Product()": {
+          "Lines": {
+            "14": 6
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.Discount::.ctor(SupermarketReceipt.Product,System.String,System.Double)": {
+          "Lines": {
+            "5": 6,
+            "6": 6,
+            "7": 6,
+            "8": 6,
+            "9": 6,
+            "10": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/bastienchies/Downloads/SupermarketReceipt-Refactoring-Kata-main/csharp/SupermarketReceipt/FakeCatalog.cs": {
+      "SupermarketReceipt.FakeCatalog": {
+        "System.Void SupermarketReceipt.FakeCatalog::AddProduct(SupermarketReceipt.Product,System.Double)": {
+          "Lines": {
+            "11": 3,
+            "12": 3,
+            "13": 3,
+            "14": 3
+          },
+          "Branches": []
+        },
+        "System.Double SupermarketReceipt.FakeCatalog::GetUnitPrice(SupermarketReceipt.Product)": {
+          "Lines": {
+            "17": 6,
+            "18": 6,
+            "19": 6
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.FakeCatalog::.ctor()": {
+          "Lines": {
+            "7": 3,
+            "8": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/bastienchies/Downloads/SupermarketReceipt-Refactoring-Kata-main/csharp/SupermarketReceipt/Offer.cs": {
+      "SupermarketReceipt.Offer": {
+        "SupermarketReceipt.SpecialOfferType SupermarketReceipt.Offer::get_OfferType()": {
+          "Lines": {
+            "22": 17
+          },
+          "Branches": []
+        },
+        "System.Double SupermarketReceipt.Offer::get_Argument()": {
+          "Lines": {
+            "23": 4
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.Offer::.ctor(SupermarketReceipt.SpecialOfferType,SupermarketReceipt.Product,System.Double)": {
+          "Lines": {
+            "15": 3,
+            "16": 3,
+            "17": 3,
+            "18": 3,
+            "19": 3,
+            "20": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/bastienchies/Downloads/SupermarketReceipt-Refactoring-Kata-main/csharp/SupermarketReceipt/Product.cs": {
+      "SupermarketReceipt.Product": {
+        "System.String SupermarketReceipt.Product::get_Name()": {
+          "Lines": {
+            "13": 45
+          },
+          "Branches": []
+        },
+        "SupermarketReceipt.ProductUnit SupermarketReceipt.Product::get_Unit()": {
+          "Lines": {
+            "14": 33
+          },
+          "Branches": []
+        },
+        "System.Boolean SupermarketReceipt.Product::Equals(System.Object)": {
+          "Lines": {
+            "17": 9,
+            "18": 9,
+            "19": 9,
+            "20": 9,
+            "21": 9,
+            "22": 9
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 9
+            },
+            {
+              "Line": 19,
+              "Offset": 28,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 9
+            },
+            {
+              "Line": 19,
+              "Offset": 9,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 28,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Int32 SupermarketReceipt.Product::GetHashCode()": {
+          "Lines": {
+            "25": 15,
+            "26": 15,
+            "27": 15,
+            "28": 15,
+            "29": 15,
+            "30": 15
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.Product::.ctor(System.String,SupermarketReceipt.ProductUnit)": {
+          "Lines": {
+            "7": 3,
+            "8": 3,
+            "9": 3,
+            "10": 3,
+            "11": 3
+          },
+          "Branches": []
+        }
+      },
+      "SupermarketReceipt.ProductQuantity": {
+        "SupermarketReceipt.Product SupermarketReceipt.ProductQuantity::get_Product()": {
+          "Lines": {
+            "41": 3
+          },
+          "Branches": []
+        },
+        "System.Double SupermarketReceipt.ProductQuantity::get_Quantity()": {
+          "Lines": {
+            "42": 3
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.ProductQuantity::.ctor(SupermarketReceipt.Product,System.Double)": {
+          "Lines": {
+            "35": 3,
+            "36": 3,
+            "37": 3,
+            "38": 3,
+            "39": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/bastienchies/Downloads/SupermarketReceipt-Refactoring-Kata-main/csharp/SupermarketReceipt/Receipt.cs": {
+      "SupermarketReceipt.Receipt": {
+        "System.Double SupermarketReceipt.Receipt::GetTotalPrice()": {
+          "Lines": {
+            "11": 3,
+            "12": 3,
+            "13": 18,
+            "14": 18,
+            "15": 3,
+            "16": 3
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 50,
+              "EndOffset": 26,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 13,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 14,
+              "Offset": 110,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 14,
+              "Offset": 110,
+              "EndOffset": 112,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Void SupermarketReceipt.Receipt::AddProduct(SupermarketReceipt.Product,System.Double,System.Double,System.Double)": {
+          "Lines": {
+            "19": 3,
+            "20": 3,
+            "21": 3
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<SupermarketReceipt.ReceiptItem> SupermarketReceipt.Receipt::GetItems()": {
+          "Lines": {
+            "24": 6,
+            "25": 6,
+            "26": 6
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.Receipt::AddDiscount(SupermarketReceipt.Discount)": {
+          "Lines": {
+            "29": 3,
+            "30": 3,
+            "31": 3
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<SupermarketReceipt.Discount> SupermarketReceipt.Receipt::GetDiscounts()": {
+          "Lines": {
+            "34": 3,
+            "35": 3,
+            "36": 3
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.Receipt::.ctor()": {
+          "Lines": {
+            "7": 3,
+            "8": 3
+          },
+          "Branches": []
+        }
+      },
+      "SupermarketReceipt.ReceiptItem": {
+        "SupermarketReceipt.Product SupermarketReceipt.ReceiptItem::get_Product()": {
+          "Lines": {
+            "49": 3
+          },
+          "Branches": []
+        },
+        "System.Double SupermarketReceipt.ReceiptItem::get_Price()": {
+          "Lines": {
+            "50": 3
+          },
+          "Branches": []
+        },
+        "System.Double SupermarketReceipt.ReceiptItem::get_TotalPrice()": {
+          "Lines": {
+            "51": 6
+          },
+          "Branches": []
+        },
+        "System.Double SupermarketReceipt.ReceiptItem::get_Quantity()": {
+          "Lines": {
+            "52": 3
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.ReceiptItem::.ctor(SupermarketReceipt.Product,System.Double,System.Double,System.Double)": {
+          "Lines": {
+            "41": 3,
+            "42": 3,
+            "43": 3,
+            "44": 3,
+            "45": 3,
+            "46": 3,
+            "47": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/bastienchies/Downloads/SupermarketReceipt-Refactoring-Kata-main/csharp/SupermarketReceipt/ShoppingCart.cs": {
+      "SupermarketReceipt.ShoppingCart": {
+        "System.Collections.Generic.List`1<SupermarketReceipt.ProductQuantity> SupermarketReceipt.ShoppingCart::GetItems()": {
+          "Lines": {
+            "14": 3,
+            "15": 3,
+            "16": 3
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.ShoppingCart::AddItem(SupermarketReceipt.Product)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.ShoppingCart::AddItemQuantity(SupermarketReceipt.Product,System.Double)": {
+          "Lines": {
+            "25": 3,
+            "26": 3,
+            "27": 3,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "33": 3,
+            "34": 3,
+            "35": 3,
+            "36": 3
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 34,
+              "EndOffset": 36,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 34,
+              "EndOffset": 69,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Void SupermarketReceipt.ShoppingCart::HandleOffers(SupermarketReceipt.Receipt,System.Collections.Generic.Dictionary`2<SupermarketReceipt.Product,SupermarketReceipt.Offer>,SupermarketReceipt.SupermarketCatalog)": {
+          "Lines": {
+            "39": 3,
+            "40": 15,
+            "41": 3,
+            "42": 3,
+            "43": 3,
+            "44": 3,
+            "45": 3,
+            "46": 3,
+            "47": 3,
+            "48": 3,
+            "49": 3,
+            "50": 3,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 2,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "65": 3,
+            "66": 3,
+            "67": 3,
+            "68": 1,
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "73": 4,
+            "74": 3,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "80": 3,
+            "81": 3,
+            "82": 3,
+            "83": 3,
+            "84": 3
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 500,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 3
+            },
+            {
+              "Line": 44,
+              "Offset": 60,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 50,
+              "Offset": 104,
+              "EndOffset": 106,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 50,
+              "Offset": 104,
+              "EndOffset": 113,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 54,
+              "Offset": 127,
+              "EndOffset": 129,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 57,
+              "Offset": 144,
+              "EndOffset": 146,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 57,
+              "Offset": 144,
+              "EndOffset": 214,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 127,
+              "EndOffset": 215,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 3
+            },
+            {
+              "Line": 65,
+              "Offset": 229,
+              "EndOffset": 231,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 229,
+              "EndOffset": 234,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 3
+            },
+            {
+              "Line": 67,
+              "Offset": 247,
+              "EndOffset": 249,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 67,
+              "Offset": 247,
+              "EndOffset": 255,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 2
+            },
+            {
+              "Line": 67,
+              "Offset": 260,
+              "EndOffset": 262,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 67,
+              "Offset": 260,
+              "EndOffset": 303,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 3
+            },
+            {
+              "Line": 73,
+              "Offset": 317,
+              "EndOffset": 319,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 1
+            },
+            {
+              "Line": 73,
+              "Offset": 317,
+              "EndOffset": 376,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 3
+            },
+            {
+              "Line": 74,
+              "Offset": 384,
+              "EndOffset": 386,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 384,
+              "EndOffset": 395,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 3
+            },
+            {
+              "Line": 74,
+              "Offset": 400,
+              "EndOffset": 402,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 400,
+              "EndOffset": 471,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 3
+            },
+            {
+              "Line": 80,
+              "Offset": 480,
+              "EndOffset": 482,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 3
+            },
+            {
+              "Line": 80,
+              "Offset": 480,
+              "EndOffset": 491,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 3
+            },
+            {
+              "Line": 44,
+              "Offset": 60,
+              "EndOffset": 492,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 40,
+              "Offset": 500,
+              "EndOffset": 505,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.String SupermarketReceipt.ShoppingCart::PrintPrice(System.Double)": {
+          "Lines": {
+            "87": 1,
+            "88": 1,
+            "89": 1
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.ShoppingCart::.ctor()": {
+          "Lines": {
+            "8": 3,
+            "9": 3
+          },
+          "Branches": []
+        },
+        "System.Void SupermarketReceipt.ShoppingCart::.cctor()": {
+          "Lines": {
+            "10": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/bastienchies/Downloads/SupermarketReceipt-Refactoring-Kata-main/csharp/SupermarketReceipt/Teller.cs": {
+      "SupermarketReceipt.Teller": {
+        "System.Void SupermarketReceipt.Teller::AddSpecialOffer(SupermarketReceipt.SpecialOfferType,SupermarketReceipt.Product,System.Double)": {
+          "Lines": {
+            "16": 3,
+            "17": 3,
+            "18": 3
+          },
+          "Branches": []
+        },
+        "SupermarketReceipt.Receipt SupermarketReceipt.Teller::ChecksOutArticlesFrom(SupermarketReceipt.ShoppingCart)": {
+          "Lines": {
+            "21": 3,
+            "22": 3,
+            "23": 3,
+            "24": 15,
+            "25": 3,
+            "26": 3,
+            "27": 3,
+            "28": 3,
+            "29": 3,
+            "30": 3,
+            "31": 3,
+            "33": 3,
+            "35": 3,
+            "36": 3
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 94,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 24,
+              "Offset": 94,
+              "EndOffset": 96,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Void SupermarketReceipt.Teller::.ctor(SupermarketReceipt.SupermarketCatalog)": {
+          "Lines": {
+            "8": 3,
+            "10": 3,
+            "11": 3,
+            "12": 3,
+            "13": 3
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
