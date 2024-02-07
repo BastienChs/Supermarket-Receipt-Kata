@@ -5,12 +5,16 @@ namespace SupermarketReceipt
         ThreeForTwo,
         TenPercentDiscount,
         TwoForAmount,
-        FiveForAmount
+        FiveForAmount,
+        Bundle
     }
 
     public class Offer
     {
         private Product _product;
+        public SpecialOfferType OfferType { get; }
+        public double Argument { get; }
+        public int MinimumQuantity { get; }
 
         public Offer(SpecialOfferType offerType, Product product, double argument)
         {
@@ -19,7 +23,5 @@ namespace SupermarketReceipt
             _product = product;
         }
 
-        public SpecialOfferType OfferType { get; }
-        public double Argument { get; }
     }
 }

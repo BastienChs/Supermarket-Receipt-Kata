@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Globalization;
+using Interfaces;
+using Strategies;
 
 namespace SupermarketReceipt
 {
@@ -45,28 +47,9 @@ namespace SupermarketReceipt
                 {
                     var offer = offers[p];
                     var unitPrice = catalog.GetUnitPrice(p);
-                    Discount discount = null;
                     
-                    if (offer.OfferType == SpecialOfferType.ThreeForTwo)
-                    {
-                        ThreeForTwoOffer(ref discount, p, quantityAsInt, unitPrice);
-                    }
-
-                    if(offer.OfferType == SpecialOfferType.TwoForAmount || offer.OfferType == SpecialOfferType.FiveForAmount)
-                    {
-                        if(offer.OfferType == SpecialOfferType.TwoForAmount)
-                        {
-                            NForAmountOffer(ref discount, offer, p, 2, quantityAsInt, unitPrice);
-                        }
-                        else if(offer.OfferType == SpecialOfferType.FiveForAmount)
-                        {
-                            NForAmountOffer(ref discount, offer, p, 5, quantityAsInt, unitPrice);
-                        }
-                    }
-                    if (offer.OfferType == SpecialOfferType.TenPercentDiscount)
-                    {
-                        TenPercentDiscountOffer(ref discount, offer, p, quantity, unitPrice);
-                    }
+                    IOfferStrategy strategy = GetOfferStrategy(offer.OfferType);
+                    Discount discount = strategy.Apply(offer, p, quantity, unitPrice);
                     
                     if (discount != null)
                         receipt.AddDiscount(discount);
@@ -74,34 +57,54 @@ namespace SupermarketReceipt
             }
         }
 
-        private void ThreeForTwoOffer(ref Discount discount, Product product, int productQuantity, double productUnitPrice)
+
+        private IOfferStrategy GetOfferStrategy(SpecialOfferType offerType)
         {
-            if(productQuantity > 2)
+            switch (offerType)
             {
-                var discountAmount = productQuantity * productUnitPrice - (productQuantity / 3 * 2 * productUnitPrice + productQuantity % 3 * productUnitPrice);
-                discount = new Discount(product, "3 for 2", -discountAmount);
+                case SpecialOfferType.ThreeForTwo:
+                    return new ThreeForTwoOfferStrategy();
+                case SpecialOfferType.TenPercentDiscount:
+                    return new TenPercentDiscountStrategy();
+                case SpecialOfferType.TwoForAmount:
+                    return new NForAmountStrategy(2);
+                case SpecialOfferType.FiveForAmount:
+                    return new NForAmountStrategy(5);
+                default:
+                    return null;
             }
         }
 
-        private void NForAmountOffer(ref Discount discount, Offer offer, Product product, int n, int productQuantity, double productUnitPrice)
-        {
-            if(productQuantity >= n)
-            {
-                var totalWithoutOffer = productUnitPrice * productQuantity;
-                var totalWithOffer = offer.Argument * (productQuantity / n) + productUnitPrice * (productQuantity % n);
-                var discountTotal = totalWithoutOffer - totalWithOffer;
-                discount = new Discount(product, n + " for " + PrintPrice(offer.Argument), -discountTotal);
-            }
-        }
 
-        private void TenPercentDiscountOffer(ref Discount discount, Offer offer, Product product, double productQuantity, double productUnitPrice)
-        {
-            discount = new Discount(product, offer.Argument + "% off", -productQuantity * productUnitPrice * offer.Argument / 100.0);
-        }
+
+        // private void ThreeForTwoOffer(ref Discount discount, Product product, int productQuantity, double productUnitPrice)
+        // {
+        //     if(productQuantity > 2)
+        //     {
+        //         var discountAmount = productQuantity * productUnitPrice - (productQuantity / 3 * 2 * productUnitPrice + productQuantity % 3 * productUnitPrice);
+        //         discount = new Discount(product, "3 for 2", -discountAmount);
+        //     }
+        // }
+
+        // private void NForAmountOffer(ref Discount discount, Offer offer, Product product, int n, int productQuantity, double productUnitPrice)
+        // {
+        //     if(productQuantity >= n)
+        //     {
+        //         var totalWithoutOffer = productUnitPrice * productQuantity;
+        //         var totalWithOffer = offer.Argument * (productQuantity / n) + productUnitPrice * (productQuantity % n);
+        //         var discountTotal = totalWithoutOffer - totalWithOffer;
+        //         discount = new Discount(product, n + " for " + PrintPrice(offer.Argument), -discountTotal);
+        //     }
+        // }
+
+        // private void TenPercentDiscountOffer(ref Discount discount, Offer offer, Product product, double productQuantity, double productUnitPrice)
+        // {
+        //     discount = new Discount(product, offer.Argument + "% off", -productQuantity * productUnitPrice * offer.Argument / 100.0);
+        // }
         
-        private string PrintPrice(double price)
-        {
-            return price.ToString("N2", Culture);
-        }
+        // private string PrintPrice(double price)
+        // {
+        //     return price.ToString("N2", Culture);
+        // }
     }
 }
