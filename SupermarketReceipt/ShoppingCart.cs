@@ -9,7 +9,6 @@ namespace SupermarketReceipt
     {
         private readonly List<ProductQuantity> _items = new List<ProductQuantity>();
         private readonly Dictionary<Product, double> _productQuantities = new Dictionary<Product, double>();
-        private static readonly CultureInfo Culture = CultureInfo.CreateSpecificCulture("en-GB");
 
 
         public List<ProductQuantity> GetItems()
@@ -42,7 +41,6 @@ namespace SupermarketReceipt
             foreach (var p in _productQuantities.Keys)
             {
                 var quantity = _productQuantities[p];
-                var quantityAsInt = (int) quantity;
                 if (offers.ContainsKey(p))
                 {
                     var offer = offers[p];
@@ -74,37 +72,5 @@ namespace SupermarketReceipt
                     return null;
             }
         }
-
-
-
-        // private void ThreeForTwoOffer(ref Discount discount, Product product, int productQuantity, double productUnitPrice)
-        // {
-        //     if(productQuantity > 2)
-        //     {
-        //         var discountAmount = productQuantity * productUnitPrice - (productQuantity / 3 * 2 * productUnitPrice + productQuantity % 3 * productUnitPrice);
-        //         discount = new Discount(product, "3 for 2", -discountAmount);
-        //     }
-        // }
-
-        // private void NForAmountOffer(ref Discount discount, Offer offer, Product product, int n, int productQuantity, double productUnitPrice)
-        // {
-        //     if(productQuantity >= n)
-        //     {
-        //         var totalWithoutOffer = productUnitPrice * productQuantity;
-        //         var totalWithOffer = offer.Argument * (productQuantity / n) + productUnitPrice * (productQuantity % n);
-        //         var discountTotal = totalWithoutOffer - totalWithOffer;
-        //         discount = new Discount(product, n + " for " + PrintPrice(offer.Argument), -discountTotal);
-        //     }
-        // }
-
-        // private void TenPercentDiscountOffer(ref Discount discount, Offer offer, Product product, double productQuantity, double productUnitPrice)
-        // {
-        //     discount = new Discount(product, offer.Argument + "% off", -productQuantity * productUnitPrice * offer.Argument / 100.0);
-        // }
-        
-        // private string PrintPrice(double price)
-        // {
-        //     return price.ToString("N2", Culture);
-        // }
     }
 }
